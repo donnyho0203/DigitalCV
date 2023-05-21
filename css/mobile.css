@@ -1,0 +1,51 @@
+@media screen and (max-width: 600px) {
+  section > .container {
+    padding-top: 0px;
+  }
+  #nav-bar-container {
+    display: block;
+    justify-content: center; /*căn giữa các phần tử trong container theo chiều ngang*/
+    align-items: center; /*căn giữa các phần tử trong container theo chiều dọc*/
+    height: auto;
+  }
+  .nav-name {
+    display: none; /*Ẩn ô ở giữa*/
+  }
+  .div-nav-1 {
+    justify-content: left; /*căn lề trái*/
+    line-height: 3rem;
+    padding-left: 5px;
+  }
+  .div-nav-1:nth-child(1),
+  .div-nav-1:nth-child(2),
+  .div-nav-1:nth-child(4),
+  .div-nav-1:nth-child(5) {
+    border: none;
+  }
+
+  #target,
+  #personal-info {
+    padding: 60px 20px;
+  }
+  .col-border-top,
+  .col-border-left {
+    border: none;
+  }
+  .col-border-bottom {
+    border-bottom: solid 1px #d6c08d;
+  }
+  .favorite-content-span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    row-gap: 20px;
+  }
+  #favorite-content-div {
+    grid-column: 1 / -1;
+    justify-content: space-evenly; /*Các phần tử con của phần tử div sẽ được căn giữa theo chiều ngang và khoảng cách giữa các phần tử con được chia đều*/
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    gap: 30px;
+  }
+}

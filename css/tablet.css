@@ -1,0 +1,23 @@
+@media screen and (max-width: 992px) {
+  /* ẩn avatar */
+  #avatar {
+    display: none;
+  }
+  /* Chỉnh chiều rộng phẩn tử nằm ở vị trí thứ 3 */
+  #nav-bar-container {
+    grid-template-columns: 1fr 1fr 0.5fr 1fr 1fr;
+  }
+  #target,
+  #personal-info {
+    padding: 60px 20px;
+  }
+  #target {
+    background-color: hsl(30, 9%, 96%);
+  }
+  .nav-bar-border {
+    border: none;
+  }
+  .certificate-pics {
+    width: 18rem;
+  }
+}

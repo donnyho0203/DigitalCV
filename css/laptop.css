@@ -1,0 +1,327 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  padding: 50px;
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  font-weight: normal;
+  font-size: 200%;
+  padding-bottom: 40px;
+}
+.ul-title {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+h3 {
+  font-size: 100%;
+  margin-bottom: 10px;
+}
+p {
+  line-height: 150%;
+  margin-bottom: 0; !important
+}
+section > .container {
+  margin: auto;
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.bg-grey {
+  background: #f7f7f7;
+}
+/* banner */
+#banner {
+  height: 600px;
+}
+.banner-img {
+  position: relative; /* đặt vị trí mặc định cho phần tử con neo */
+  filter: brightness(50%); /*giảm độ sáng của ảnh*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*kích thước của phần tử bao quanh hình ảnh được đầy đủ mà không bị méo hoặc giãn.*/
+  object-position: top; /*Canh chỉnh hiển thị hình ảnh lên phần trên cùng*/
+}
+.centered-text {
+  position: absolute; /*neo theo vị trí mặc định của phần tử cha*/
+  top: 23%;
+  left: 50%;
+  color: white;
+  transform: translate(
+    -50%,
+    -50%
+  ); /*dịch chuyển theo chiều ngang và chiều dọc với giá trị là 50% của kích thước của phần tử này*/
+  text-align: center;
+  line-height: 230%;
+}
+/* nav-bar */
+#nav-bar {
+  text-align: center;
+  position: relative; /*đặt định vị tương đối cho phần tử con là img #avatar*/
+}
+.nav-bar-border {
+  border: 1px solid rgba(199, 198, 198, 0.5);
+}
+#avatar {
+  object-fit: cover; /* điều chỉnh kích thước của hình ảnh để phủ đầy khu vực của phần tử chứa hình ảnh*/
+  object-position: top; /* căn chỉnh hình ảnh theo chiều dọc của phần tử chứa hình ảnh*/
+  border-radius: 50%; /*bo tròn hình ảnh*/
+  border: 7px solid white; /*tạo border bao quanh hình*/
+  position: absolute; /*đặt định vị tuyệt đối so với phần tử cha là div #navbar*/
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /*dịch chuyển hình ảnh theo chiều ngang và dọc để căn giữa*/
+  z-index: 9999; /*đặt hình ảnh lên trên các thành phần khác*/
+}
+#nav-bar-container {
+  padding: 0;
+  width: 100%;
+  height: 65px;
+  display: grid; /*tạo 1 Grid container chưa 5 phần tử con trong 1 hàng */
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+  justify-content: center; /*căn giữa các phần tử trong container theo chiều ngang*/
+  align-items: center; /*căn giữa các phần tử trong container theo chiều dọc*/
+  grid-template-areas: "nav1 nav2 nav3 nav4 nav5"; /*xác định vị trí và kích thước của các ô lưới (grid cells)*/
+}
+.div-nav-1:nth-child(1) {
+  grid-area: nav1;
+  border-left: 1px solid rgba(199, 198, 198, 0.5);
+}
+
+.div-nav-1:nth-child(2) {
+  grid-area: nav2;
+  border-left: 1px solid rgba(199, 198, 198, 0.5);
+}
+
+.nav-name {
+  grid-area: nav3;
+  height: 65px;
+  border: 1px solid rgba(199, 198, 198, 0.5);
+  border-top: none;
+  border-bottom: none;
+}
+.div-nav-1:nth-child(4) {
+  grid-area: nav4;
+  border-right: 1px solid rgba(199, 198, 198, 0.5);
+}
+
+.div-nav-1:nth-child(5) {
+  grid-area: nav5;
+  border-right: 1px solid rgba(199, 198, 198, 0.5);
+}
+.div-nav-1,
+.div-nav-1 a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+.div-nav-1 a {
+  padding-right: 10px;
+}
+.div-nav-1 a:hover {
+  font-weight: bold;
+  color: black;
+}
+/* section 1 */
+#target,
+#personal-info {
+  padding: 90px 40px 40px 40px;
+}
+#target {
+  background-color: #f7f7f7;
+}
+#personal-info {
+  background-color: rgb(238, 237, 236);
+  word-wrap: break-word; /* Chỉnh các từ xuống dòng mới khi không đủ không gian */
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  padding-bottom: 20px;
+}
+.mt-40 > li > span {
+  font-weight: bold;
+}
+.mt-40 > li {
+  line-height: 200%;
+}
+/* section 2 (Kinh nghiệm, Học vấn, Hoạt động) */
+#job-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  grid-template-rows: auto auto;
+  justify-content: space-between;
+  row-gap: 30px; /*tạo gap giữa các grid item*/
+}
+.grid-div {
+  border: 2px solid rgba(207, 207, 207, 0.5);
+}
+.grid-div-inside {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: 75% 25%; /*tạo 2 cột với chiều dài lần lượt là 75% và 25%*/
+}
+.grid-div-inside h1 {
+  padding: 0;
+  align-self: end; /*căn chỉnh item này bắt đầu từ đầu theo chiều dọc*/
+}
+.grid-div-inside i {
+  justify-self: center; /*căn chỉnh item này ở giữa theo chiều ngang*/
+}
+.inside-content {
+  grid-column: 1 / -1; /*đặt vị trí của grid item này theo cột*/
+}
+.job-info-ul {
+  padding: 0;
+}
+.job-info-ul li {
+  padding-left: 40px; /*tạo khoảng cách giữa vòng tròn và nội dung của li*/
+  position: relative; /*tạo khung chứa cho phần tử giả trước của li*/
+}
+.job-info-ul li:before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%; /*làm tròn cạnh của vòng tròn */
+  background-color: rgb(0, 162, 255);
+  position: absolute;
+  left: 0; /*đặt vòng tròn bên trái của li */
+  top: 8px; /*đặt vòng tròn ở đầu dòng đầu tiên của li */
+}
+.job-info-ul li span {
+  font-style: italic;
+}
+.blue-text {
+  color: white;
+  display: inline-block; /*thay đổi kiểu hiển thị của phần tử span từ mặc định là inline (chỉ chiếm độ rộng của nội dung) thành inline-block (có thể được định dạng với chiều rộng và chiều cao).*/
+  background-color: rgb(0, 132, 255);
+  border-radius: 5px; /*tạo ra các góc bo tròn*/
+  padding: 3px 9px;
+}
+/* Section 3 (Sở thích)*/
+#favorite-content-div {
+  grid-column: 1 / -1;
+  margin-top: 50px;
+}
+.favorite-content-span i {
+  display: flex;
+  border: solid 2px #199cdb;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+/*Section 4 (Ngôn ngữ, kỹ năng)*/
+.three-level-span {
+  background: #199cdb;
+  display: inline-block;
+  height: 4px;
+  margin-right: 10px;
+  width: 45px;
+}
+.section-4 span {
+  margin-bottom: 40px;
+}
+.section-4 p {
+  margin-bottom: 10px;
+}
+/* Section 5 (Chứng chỉ - giải thưởng)*/
+.section-5-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  justify-content: space-between;
+  column-gap: 20px;
+  row-gap: 50px;
+}
+.section-5-grid-items {
+  display: flex;
+  gap: 40px;
+}
+#full-width-grid-item {
+  grid-column: 1 / -1;
+  padding-top: 50px;
+  border-top: solid 1px #d6c08d;
+}
+/* Section 6 (Dự án)*/
+.project-grid-items {
+  border: 2px solid rgba(207, 207, 207, 0.5);
+}
+.project-grid-items img {
+  width: 100%;
+  border-bottom: 1px solid rgba(207, 207, 207, 0.5);
+}
+.project-inside-grid-items-div-1 {
+  padding: 20px 0 20px 20px;
+  border-bottom: 1px solid rgba(207, 207, 207, 0.5);
+}
+.project-inside-grid-items-div-2 {
+  padding: 10px 0 10px 20px;
+}
+.project-blue-text {
+  color: white;
+  display: inline-block; /*thay đổi kiểu hiển thị của phần tử span từ mặc định là inline (chỉ chiếm độ rộng của nội dung) thành inline-block (có thể được định dạng với chiều rộng và chiều cao).*/
+  background-color: #199cdb;
+  border-radius: 20px; /*tạo ra các góc bo tròn*/
+  padding: 8px 15px;
+}
+.project-inside-grid-items-div-3 {
+  border-top: 1px solid rgba(207, 207, 207, 0.5);
+}
+.project-inside-grid-items-div-3 table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.project-inside-grid-items-div-3 table th {
+  border-top: 1px solid rgba(207, 207, 207, 0.5);
+  padding: 20px 20px 0 10px;
+  font-weight: normal;
+  white-space: nowrap; /*tránh ngắt chữ xuống hàng*/
+  text-align: start; /*canh chỉnh nội dung của thẻ th sang phía ngoài cùng bên trái*/
+  vertical-align: top; /*canh chỉnh nội dung của thẻ th lên trên đầu theo chiều dọc*/
+}
+.project-inside-grid-items-div-3 table td {
+  border-top: 1px solid rgba(207, 207, 207, 0.5);
+  padding: 20px 10px 20px 0;
+}
+/*footer*/
+#footer-container ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(167, 163, 163);
+  
+}
+#footer-container ul li a:hover {
+  font-weight: bold;
+}
+.col-border-left {
+  padding-left: 20px;
+  border-left: solid 1px #d6c08d;
+}
+.col-border-top {
+  border-top: 1px solid #d6c08d;
+}
+.hide {
+  display: none;
+}
+.input-email {
+  border: 1px solid #ccc;
+}
+.expanded {
+  height: auto !important;
+}
